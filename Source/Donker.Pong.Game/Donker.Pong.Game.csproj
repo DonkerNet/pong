@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{78D540D1-2618-4EBA-A87A-03117760FC04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Donker.Pong.Game</RootNamespace>
+    <AssemblyName>DonkerPONG</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MonoGamePlatform>Windows</MonoGamePlatform>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>..\..\Build\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ProductName>DonkerPONG</ProductName>
+    <PublisherName>Wesley Donker</PublisherName>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.0</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>5</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\$(MonoGamePlatform)\$(Platform)\$(Configuration)\</OutputPath>
+    <DefineConstants>TRACE;WINDOWS</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>7D69FA331F02E4F5FA7C974B59711AB3A1938FC8</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Donker.Pong.Game_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\GlobalAssemblyInfo.cs">
+      <Link>Properties\GlobalAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="Actors\Balls\Ball.cs" />
+    <Compile Include="Actors\Balls\BallFactory.cs" />
+    <Compile Include="Actors\Paddles\PaddleBase.cs" />
+    <Compile Include="Actors\Paddles\PaddleFactory.cs" />
+    <Compile Include="Actors\Paddles\PlayerPaddle.cs" />
+    <Compile Include="Actors\Paddles\PaddleSide.cs" />
+    <Compile Include="Actors\Paddles\BasicAiPaddle.cs" />
+    <Compile Include="Audio\AudioManager.cs" />
+    <Compile Include="Components\ActorComponent.cs" />
+    <Compile Include="Components\BackgroundComponent.cs" />
+    <Compile Include="Components\CollisionComponent.cs" />
+    <Compile Include="Components\MenuComponent.cs" />
+    <Compile Include="Components\ScoreComponent.cs" />
+    <Compile Include="Components\SpeedComponent.cs" />
+    <Compile Include="Components\TimeComponent.cs" />
+    <Compile Include="MainGame.cs" />
+    <Compile Include="Menu\AudioSettingsMenuPage.cs" />
+    <Compile Include="Menu\ControlSettingsMenuPage.cs" />
+    <Compile Include="Menu\NewGameMenuPage.cs" />
+    <Compile Include="Menu\RootMenuPage.cs" />
+    <Compile Include="Menu\SettingsMenuPage.cs" />
+    <Compile Include="Menu\ConfirmationMenuPage.cs" />
+    <Compile Include="Menu\VideoSettingsMenuPage.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResourceFiles\StringResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>StringResources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Entities\AudioSettings.cs" />
+    <Compile Include="Settings\Entities\ControlScheme.cs" />
+    <Compile Include="Settings\Entities\ControlSettings.cs" />
+    <Compile Include="Settings\Entities\GameplaySettings.cs" />
+    <Compile Include="Settings\Entities\GameSettings.cs" />
+    <Compile Include="Settings\SettingsAppliedEventArgs.cs" />
+    <Compile Include="Settings\SettingsConstants.cs" />
+    <Compile Include="Settings\SettingsManager.cs" />
+    <Compile Include="Settings\Entities\VideoSettings.cs" />
+    <Compile Include="Status\GameInfo.cs" />
+    <Compile Include="Status\GameState.cs" />
+    <Compile Include="Status\GameStateChangedEventArgs.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="MonoGame.Framework">
+      <HintPath>$(MonoGameInstallDirectory)\MonoGame\v3.0\Assemblies\Windows\MonoGame.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <MonoGameContentReference Include="Content\Content.mgcb" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Donker.Pong.Core\Donker.Pong.Common.csproj">
+      <Project>{bb06abf7-b31c-408f-9e55-f88af06bbd47}</Project>
+      <Name>Donker.Pong.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ResourceFiles\StringResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,63 @@
+
+#----------------------------- Global Properties ----------------------------#
+
+/outputDir:bin/$(Platform)
+/intermediateDir:obj/$(Platform)
+/platform:Windows
+/config:
+/profile:Reach
+/compress:False
+
+#-------------------------------- References --------------------------------#
+
+
+#---------------------------------- Content ---------------------------------#
+
+#begin Fonts/PongFont_Small.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/PongFont_Small.spritefont
+
+#begin Fonts/PongFont_Large.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:TextureFormat=Compressed
+/build:Fonts/PongFont_Large.spritefont
+
+#begin SFX/BallEdgeHit_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX/BallEdgeHit_2.wav
+
+#begin SFX/BallPaddleHit_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX/BallPaddleHit_2.wav
+
+#begin SFX/BallReset_2.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX/BallReset_2.wav
+
+#begin SFX\BallEdgeHit_1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX\BallEdgeHit_1.wav
+
+#begin SFX\BallPaddleHit_1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX\BallPaddleHit_1.wav
+
+#begin SFX\BallReset_1.wav
+/importer:WavImporter
+/processor:SoundEffectProcessor
+/processorParam:Quality=Best
+/build:SFX\BallReset_1.wav
+
