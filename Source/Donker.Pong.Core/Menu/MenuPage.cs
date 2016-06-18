@@ -181,7 +181,7 @@ namespace Donker.Pong.Common.Menu
 
             spriteBatch.DrawString(titleFont, Title, titlePosition, Color.White);
 
-            float itemStartPosY = titlePosition.Y + titleSize.Y * 1.5F;
+            float itemStartPosY = titlePosition.Y + titleSize.Y * 2F;
 
             for (int i = 0; i < Items.Count; ++i)
             {
@@ -195,7 +195,7 @@ namespace Donker.Pong.Common.Menu
                     itemText,
                     new Vector2(
                         center.X - itemTextSize.X / 2F,
-                        itemStartPosY + i * (1.25F * itemTextSize.Y)), 
+                        itemStartPosY + i * (1.5F * itemTextSize.Y)), 
                     Color.White);
             }
         }

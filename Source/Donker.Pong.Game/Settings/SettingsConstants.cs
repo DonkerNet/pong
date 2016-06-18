@@ -31,23 +31,6 @@ namespace Donker.Pong.Game.Settings
 
         #endregion
 
-        #region Menu settings
-
-        /// <summary>
-        /// The Y-position of the menu title.
-        /// </summary>
-        public const float MenuTitlePositionY = 24F;
-        /// <summary>
-        /// The Y-position where the menu items start.
-        /// </summary>
-        public const float MenuItemsPositionY = 128F;
-        /// <summary>
-        /// The spacing between menu items.
-        /// </summary>
-        public const float MenuItemSpacing = 24F;
-
-        #endregion
-
         #region Score settings
 
         /// <summary>

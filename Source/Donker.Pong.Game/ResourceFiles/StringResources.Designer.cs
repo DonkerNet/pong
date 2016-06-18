@@ -178,7 +178,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GAME OVER.
+        ///   Looks up a localized string similar to GAME  OVER.
         /// </summary>
         internal static string GameStatusText_Ended {
             get {
@@ -187,8 +187,8 @@ namespace Donker.Pong.Game.ResourceFiles {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to PAU SED
-        ///E =  Exit.
+        ///   Looks up a localized string similar to  PAU  SED
+        /// E  =   Exit.
         /// </summary>
         internal static string GameStatusText_Paused {
             get {

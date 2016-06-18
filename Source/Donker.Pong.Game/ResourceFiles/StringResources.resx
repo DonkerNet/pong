@@ -157,11 +157,11 @@
     <value>Game Speed</value>
   </data>
   <data name="GameStatusText_Ended" xml:space="preserve">
-    <value>GAME OVER</value>
+    <value>GAME  OVER</value>
   </data>
   <data name="GameStatusText_Paused" xml:space="preserve">
-    <value>PAU SED
-E =  Exit</value>
+    <value> PAU  SED
+ E  =   Exit</value>
   </data>
   <data name="GameTitle" xml:space="preserve">
     <value>DonkerPONG</value>

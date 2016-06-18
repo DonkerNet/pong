@@ -198,13 +198,13 @@ namespace Donker.Pong.Game
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.Black);
-
+            
             _spriteBatch.Begin(
                 SpriteSortMode.Immediate,
-                BlendState.AlphaBlend,
-                SamplerState.LinearClamp,
-                DepthStencilState.None,
-                RasterizerState.CullCounterClockwise,
+                null,
+                null,
+                null,
+                null,
                 null,
                 Matrix.CreateScale(_gameInfo.Scale));
 
@@ -234,7 +234,7 @@ namespace Donker.Pong.Game
 
             Vector2 textSize = _statusTextFont.MeasureString(text);
             Vector2 center = _gameInfo.Bounds.Center;
-
+            
             _spriteBatch.DrawString(_statusTextFont, text, center - textSize / 2F, Color.White);
         }
     }

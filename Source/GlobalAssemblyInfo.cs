@@ -1,5 +1,4 @@
 ﻿using System.Reflection;
-using System.Runtime.InteropServices;
 
 [assembly: AssemblyProduct("DonkerPONG")]
 [assembly: AssemblyCompany("")]
