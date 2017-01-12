@@ -14,11 +14,10 @@ namespace Donker.Pong.Game.Components
     {
         private GameInfo _gameInfo;
         private SpriteBatch _spriteBatch;
-        private Texture2D _horizontalBlockTexture;
-        private Texture2D _verticalBlockTexture;
+        private Texture2D _blockPixel;
 
-        private Vector2[] _horizontalBlocks;
-        private Vector2[] _verticalBlocks;
+        private Rectangle[] _horizontalBlocks;
+        private Rectangle[] _verticalBlocks;
 
         const float BlockMarginTotal = SettingsConstants.BackgroundBlockMargin * 2F;
 
@@ -70,11 +69,11 @@ namespace Donker.Pong.Game.Components
             float blockX = _gameInfo.Bounds.Width / 2F - SettingsConstants.BackgroundBlockThickness / 2F;
 
             // Create a new array with the vectors for where a block should be drawn
-            _verticalBlocks = new Vector2[blockCount];
+            _verticalBlocks = new Rectangle[blockCount];
             for (int i = 0; i < blockCount; i++)
             {
                 float blockY = startPosY + i * (SettingsConstants.BackgroundBlockLength + BlockMarginTotal);
-                _verticalBlocks[i] = new Vector2(blockX, blockY);
+                _verticalBlocks[i] = new Rectangle((int)blockX, (int)blockY, (int)SettingsConstants.BackgroundBlockThickness, (int)SettingsConstants.BackgroundBlockLength);
             }
         }
 
@@ -94,44 +93,35 @@ namespace Donker.Pong.Game.Components
             float blockYBottom = _gameInfo.Bounds.Bottom - SettingsConstants.BackgroundBlockThickness * 2F;
 
             // Create a new array with the vectors for where a block should be drawn (top and bottom)
-            _horizontalBlocks = new Vector2[blockCount * 2];
+            _horizontalBlocks = new Rectangle[blockCount * 2];
             for (int i = 0; i < blockCount; i++)
             {
                 float blockX = startPosX + i * (SettingsConstants.BackgroundBlockLength + BlockMarginTotal);
 
-                _horizontalBlocks[i] = new Vector2(blockX, blockYTop);
-                _horizontalBlocks[i + blockCount] = new Vector2(blockX, blockYBottom);
+                _horizontalBlocks[i] = new Rectangle((int)blockX, (int)blockYTop, (int)SettingsConstants.BackgroundBlockLength, (int)SettingsConstants.BackgroundBlockThickness);
+                _horizontalBlocks[i + blockCount] = new Rectangle((int)blockX, (int)blockYBottom, (int)SettingsConstants.BackgroundBlockLength, (int)SettingsConstants.BackgroundBlockThickness);
             }
         }
 
         public override void LoadContent()
         {
             _spriteBatch = Game.Services.GetService<SpriteBatch>();
-
-            _verticalBlockTexture = new Texture2D(Game.GraphicsDevice, (int) SettingsConstants.BackgroundBlockThickness, (int) SettingsConstants.BackgroundBlockLength);
-            _verticalBlockTexture.FillColor(Color.White);
-
-            _horizontalBlockTexture = new Texture2D(Game.GraphicsDevice, (int) SettingsConstants.BackgroundBlockLength, (int) SettingsConstants.BackgroundBlockThickness);
-            _horizontalBlockTexture.FillColor(Color.White);
+            _blockPixel = new Texture2D(Game.GraphicsDevice, 1, 1);
+            _blockPixel.FillColor(Color.White);
         }
 
         public override void UnloadContent()
         {
-            _verticalBlockTexture.Dispose();
-            _horizontalBlockTexture.Dispose();
+            _blockPixel.Dispose();
         }
 
         public override void Draw(GameTime gameTime)
         {
-            foreach (Vector2 horizontalBlockTop in _horizontalBlocks)
-            {
-                _spriteBatch.Draw(_horizontalBlockTexture, horizontalBlockTop);
-            }
+            foreach (Rectangle horizontalBlockTop in _horizontalBlocks)
+                _spriteBatch.Draw(_blockPixel, destinationRectangle: horizontalBlockTop);
 
-            foreach (Vector2 verticalBlock in _verticalBlocks)
-            {
-                _spriteBatch.Draw(_verticalBlockTexture, verticalBlock);
-            }
+            foreach (Rectangle verticalBlock in _verticalBlocks)
+                _spriteBatch.Draw(_blockPixel, destinationRectangle: verticalBlock);
         }
     }
 }

@@ -5,7 +5,6 @@ using Donker.Pong.Common.GameComponents;
 using Donker.Pong.Common.Input;
 using Donker.Pong.Common.Settings;
 using Donker.Pong.Common.Shapes;
-using Donker.Pong.Game.Actors;
 using Donker.Pong.Game.Audio;
 using Donker.Pong.Game.Components;
 using Donker.Pong.Game.ResourceFiles;
@@ -31,7 +30,6 @@ namespace Donker.Pong.Game
         private readonly ActorRegistry _actorRegistry;
         
         private SpriteBatch _spriteBatch;
-        private SpriteFont _statusTextFont;
 
         // Game components
         private MenuComponent _menuComponent;
@@ -41,6 +39,7 @@ namespace Donker.Pong.Game
         private ScoreComponent _scoreComponent;
         private TimeComponent _timeComponent;
         private SpeedComponent _speedComponent;
+        private StatusComponent _statusComponent;
 
         public MainGame()
         {
@@ -99,6 +98,9 @@ namespace Donker.Pong.Game
 
             _speedComponent = new SpeedComponent(this);
             Components.Add(_speedComponent);
+
+            _statusComponent = new StatusComponent(this);
+            Components.Add(_statusComponent);
         }
 
         /// <summary>
@@ -141,8 +143,6 @@ namespace Donker.Pong.Game
             // Create a new SpriteBatch, which can be used to draw textures.
             _spriteBatch = new SpriteBatch(GraphicsDevice);
             Services.AddService(_spriteBatch);
-
-            _statusTextFont = Content.Load<SpriteFont>("Fonts\\PongFont_Large");
 
             // TODO: use this.Content to load your game content here
 
@@ -199,43 +199,11 @@ namespace Donker.Pong.Game
         {
             GraphicsDevice.Clear(Color.Black);
             
-            _spriteBatch.Begin(
-                SpriteSortMode.Immediate,
-                null,
-                null,
-                null,
-                null,
-                null,
-                Matrix.CreateScale(_gameInfo.Scale));
-
-            DrawStatusText();
+            _spriteBatch.Begin(SpriteSortMode.Immediate, transformMatrix: Matrix.CreateScale(_gameInfo.Scale));
 
             Components.OfType<IDrawable>().Where(c => c.Visible).ForEach(c => c.Draw(gameTime));
 
             _spriteBatch.End();
-        }
-
-        // Draws the paused or game over status text to the screen
-        private void DrawStatusText()
-        {
-            string text;
-
-            switch (_gameInfo.State)
-            {
-                case GameState.Paused:
-                    text = StringResources.GameStatusText_Paused;
-                    break;
-                case GameState.Ended:
-                    text = StringResources.GameStatusText_Ended;
-                    break;
-                default:
-                    return;
-            }
-
-            Vector2 textSize = _statusTextFont.MeasureString(text);
-            Vector2 center = _gameInfo.Bounds.Center;
-            
-            _spriteBatch.DrawString(_statusTextFont, text, center - textSize / 2F, Color.White);
         }
     }
 }

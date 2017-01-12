@@ -82,6 +82,7 @@
     <Compile Include="Actors\Paddles\BasicAiPaddle.cs" />
     <Compile Include="Audio\AudioManager.cs" />
     <Compile Include="Components\ActorComponent.cs" />
+    <Compile Include="Components\StatusComponent.cs" />
     <Compile Include="Components\BackgroundComponent.cs" />
     <Compile Include="Components\CollisionComponent.cs" />
     <Compile Include="Components\MenuComponent.cs" />
@@ -114,6 +115,7 @@
     <Compile Include="Settings\Entities\VideoSettings.cs" />
     <Compile Include="Status\GameInfo.cs" />
     <Compile Include="Status\GameState.cs" />
+    <Compile Include="Status\ScoreChangedEventArgs.cs" />
     <Compile Include="Status\GameStateChangedEventArgs.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -138,7 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="ResourceFiles\StringResources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>

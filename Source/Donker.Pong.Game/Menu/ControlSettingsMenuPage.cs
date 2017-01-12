@@ -53,7 +53,7 @@ namespace Donker.Pong.Game.Menu
             _leftUpItem = new MenuItem { Name = StringResources.MenuText_Controls_LeftUp };
             _leftUpItem.Options.Add(new MenuItemOption
             {
-                Text = controlSettings.LeftPaddle.MoveUp.ToString(),
+                Text = InputManager.GetKeyDescription(controlSettings.LeftPaddle.MoveUp),
                 Value = controlSettings.LeftPaddle.MoveUp
             });
             Items.Add(_leftUpItem);
@@ -63,7 +63,7 @@ namespace Donker.Pong.Game.Menu
             _leftDownItem = new MenuItem { Name = StringResources.MenuText_Controls_LeftDown };
             _leftDownItem.Options.Add(new MenuItemOption
             {
-                Text = controlSettings.LeftPaddle.MoveDown.ToString(),
+                Text = InputManager.GetKeyDescription(controlSettings.LeftPaddle.MoveDown),
                 Value = controlSettings.LeftPaddle.MoveDown
             });
             Items.Add(_leftDownItem);
@@ -73,7 +73,7 @@ namespace Donker.Pong.Game.Menu
             _rightUpItem = new MenuItem { Name = StringResources.MenuText_Controls_RightUp };
             _rightUpItem.Options.Add(new MenuItemOption
             {
-                Text = controlSettings.RightPaddle.MoveUp.ToString(),
+                Text = InputManager.GetKeyDescription(controlSettings.RightPaddle.MoveUp),
                 Value = controlSettings.RightPaddle.MoveUp
             });
             Items.Add(_rightUpItem);
@@ -83,7 +83,7 @@ namespace Donker.Pong.Game.Menu
             _rightDownItem = new MenuItem { Name = StringResources.MenuText_Controls_RightDown };
             _rightDownItem.Options.Add(new MenuItemOption
             {
-                Text = controlSettings.RightPaddle.MoveDown.ToString(),
+                Text = InputManager.GetKeyDescription(controlSettings.RightPaddle.MoveDown),
                 Value = controlSettings.RightPaddle.MoveDown
             });
             Items.Add(_rightDownItem);
@@ -132,7 +132,7 @@ namespace Donker.Pong.Game.Menu
         private void SetKey(Keys key)
         {
             MenuItemOption option = SelectedItem.SelectedOption;
-            option.Text = key.ToString();
+            option.Text = InputManager.GetKeyDescription(key);
             option.Value = key;
             _isWaitingForInput = false;
         }

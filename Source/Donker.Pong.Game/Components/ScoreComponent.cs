@@ -18,6 +18,11 @@ namespace Donker.Pong.Game.Components
         // Content manager resources
         private SpriteFont _scoreFont;
 
+        private string _leftScoreString;
+        private Vector2 _leftScoreLocation;
+        private string _rightScoreString;
+        private Vector2 _rightScoreLocation;
+
         public ScoreComponent(Microsoft.Xna.Framework.Game game)
             : base(game)
         {
@@ -29,6 +34,7 @@ namespace Donker.Pong.Game.Components
             _settingsManager = Game.Services.GetService<SettingsManager>();
 
             _gameInfo.StateChanged += GameInfoOnStateChanged;
+            _gameInfo.ScoreChanged += GameInfoOnScoreChanged;
         }
 
         private void GameInfoOnStateChanged(object sender, GameStateChangedEventArgs e)
@@ -38,9 +44,9 @@ namespace Donker.Pong.Game.Components
                 case GameState.InProgress:
                     if (e.PreviousState < GameState.InProgress)
                     {
-                        // New game has started, reset score
-                        _gameInfo.LeftScore = 0;
-                        _gameInfo.RightScore = 0;
+                        // New game has started, reset scores
+                        _gameInfo.ResetScores();
+                        UpdateScores(0, 0);
                     }
                     // Only enable updating when a score limit has been set
                     Enabled = _settingsManager.Settings.Gameplay.HasScoreLimit
@@ -61,6 +67,23 @@ namespace Donker.Pong.Game.Components
             }
         }
 
+        private void UpdateScores(int leftScore, int rightScore)
+        {
+            _leftScoreString = leftScore.ToString();
+            _rightScoreString = rightScore.ToString();
+
+            float centerX = _gameInfo.Bounds.Center.X;
+            Vector2 leftScoreStringSize = _scoreFont.MeasureString(_leftScoreString);
+
+            _leftScoreLocation = new Vector2(centerX - leftScoreStringSize.X - SettingsConstants.ScoreTextMargin, SettingsConstants.ScoreTextMargin);
+            _rightScoreLocation = new Vector2(centerX + SettingsConstants.ScoreTextMargin, SettingsConstants.ScoreTextMargin);
+        }
+
+        private void GameInfoOnScoreChanged(object sender, ScoreChangedEventArgs e)
+        {
+            UpdateScores(e.NewLeftScore, e.NewRightScore);
+        }
+
         public override void LoadContent()
         {
             _spriteBatch = Game.Services.GetService<SpriteBatch>();
@@ -76,24 +99,10 @@ namespace Donker.Pong.Game.Components
 
         public override void Draw(GameTime gameTime)
         {
-            float centerX = _gameInfo.Bounds.Center.X;
-
-            string leftScoreString = _gameInfo.LeftScore.ToString();
-            Vector2 leftScoreStringSize = _scoreFont.MeasureString(leftScoreString);
-
-            // Draw the left side's score
-            _spriteBatch.DrawString(
-                _scoreFont,
-                leftScoreString,
-                new Vector2(centerX - leftScoreStringSize.X - SettingsConstants.ScoreTextMargin, SettingsConstants.ScoreTextMargin),
-                Color.White);
-
-            // Draw the right side's score
-            _spriteBatch.DrawString(
-                _scoreFont,
-                _gameInfo.RightScore.ToString(),
-                new Vector2(centerX + SettingsConstants.ScoreTextMargin, SettingsConstants.ScoreTextMargin),
-                Color.White);
+            if (_leftScoreString != null)
+                _spriteBatch.DrawString(_scoreFont, _leftScoreString, _leftScoreLocation, Color.White);
+            if (_rightScoreString != null)
+                _spriteBatch.DrawString(_scoreFont, _rightScoreString, _rightScoreLocation, Color.White);
         }
     }
 }

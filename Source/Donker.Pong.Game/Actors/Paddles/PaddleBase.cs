@@ -41,7 +41,7 @@ namespace Donker.Pong.Game.Actors.Paddles
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, Hitbox.Location, Color.White);
+            spriteBatch.Draw(_texture, destinationRectangle: Hitbox);
         }
 
         public void OnColliderCollision(IBoxCollider otherCollider, Vector2 intersection)

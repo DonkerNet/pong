@@ -86,7 +86,7 @@ namespace Donker.Pong.Game.Menu
             _scoreLimitItem.Options.Add(new MenuItemOption { Text = StringResources.None, Value = 0 });
             foreach (int scoreLimit in new[] { 5, 10, 20, 30 })
             {
-                string text = string.Format("{0} pts", scoreLimit);
+                string text = string.Format("{0} {1}", scoreLimit, StringResources.pts);
                 _scoreLimitItem.Options.Add(new MenuItemOption { Text = text, Value = scoreLimit });
             }
 

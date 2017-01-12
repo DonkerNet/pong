@@ -18,7 +18,7 @@ namespace Donker.Pong.Game.Actors.Balls
         private readonly AudioManager _audioManager;
 
         // Disposable resources
-        private Texture2D _ballTexture;
+        private Texture2D _ballPixel;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="BallFactory"/> using the specified services.
@@ -31,8 +31,8 @@ namespace Donker.Pong.Game.Actors.Balls
             _audioManager = services.GetService<AudioManager>();
 
             GraphicsDeviceManager graphics = services.GetService<GraphicsDeviceManager>();
-            _ballTexture = new Texture2D(graphics.GraphicsDevice, (int)SettingsConstants.BallSize.X, (int)SettingsConstants.BallSize.Y);
-            _ballTexture.FillColor(Color.White);
+            _ballPixel = new Texture2D(graphics.GraphicsDevice, 1, 1);
+            _ballPixel.FillColor(Color.White);
         }
 
         /// <summary>
@@ -46,7 +46,7 @@ namespace Donker.Pong.Game.Actors.Balls
             return new Ball(
                _gameInfo,
                _audioManager,
-               _ballTexture,
+               _ballPixel,
                SettingsConstants.BallSize,
                SettingsConstants.BallBoundsPadding,
                SettingsConstants.BallSpeed);
@@ -72,10 +72,10 @@ namespace Donker.Pong.Game.Actors.Balls
 
             if (disposing)
             {
-                _ballTexture.Dispose();
+                _ballPixel.Dispose();
             }
 
-            _ballTexture = null;
+            _ballPixel = null;
         }
 
         /// <summary>

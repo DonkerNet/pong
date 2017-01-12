@@ -68,11 +68,12 @@ namespace Donker.Pong.Game.Components
 
             _actorRegistry.AddRange(leftPaddle, rightPaddle);
 
-            for (int i = 0; i < _settingsManager.Settings.Gameplay.BallCount; i++)
-            {
-                Ball ball = _ballFactory.CreateBall();
-                _actorRegistry.Add(ball);
-            }
+            IActor[] balls = new IActor[_settingsManager.Settings.Gameplay.BallCount];
+
+            for (int i = 0; i < balls.Length; i++)
+                balls[i] = _ballFactory.CreateBall();
+
+            _actorRegistry.AddRange(balls);
         }
 
         public override void LoadContent()
@@ -85,18 +86,14 @@ namespace Donker.Pong.Game.Components
 
         public override void Update(GameTime gameTime)
         {
-            foreach (IActor actor in _actorRegistry)
-            {
+            foreach (IActor actor in _actorRegistry.GetAll())
                 actor.Update(gameTime);
-            }
         }
 
         public override void Draw(GameTime gameTime)
         {
-            foreach (IActor actor in _actorRegistry)
-            {
+            foreach (IActor actor in _actorRegistry.GetAll())
                 actor.Draw(_spriteBatch);
-            }
         }
 
         public override void UnloadContent()

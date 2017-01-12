@@ -9,7 +9,7 @@ namespace Donker.Pong.Common.Extensions
     public static class Texture2DExtensions
     {
         /// <summary>
-        /// Sets all the colors of a 2D texture with a single color.
+        /// Sets all the pixels of a 2D texture with a single color.
         /// </summary>
         /// <param name="texture2D">The texture to set the color for.</param>
         /// <param name="color">The color to set.</param>
@@ -17,11 +17,18 @@ namespace Donker.Pong.Common.Extensions
         {
             Color[] colors = new Color[texture2D.Width * texture2D.Height];
 
-            for (int x = 0; x < texture2D.Width; ++x)
+            if (colors.Length == 1)
             {
-                for (int y = 0; y < texture2D.Height; ++y)
+                colors[0] = color;
+            }
+            else
+            {
+                for (int x = 0; x < texture2D.Width; ++x)
                 {
-                    colors[x + y * texture2D.Width] = color;
+                    for (int y = 0; y < texture2D.Height; ++y)
+                    {
+                        colors[x + y * texture2D.Width] = color;
+                    }
                 }
             }
 

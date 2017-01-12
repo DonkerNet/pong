@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Microsoft.Xna.Framework.Input;
 
 namespace Donker.Pong.Common.Input
@@ -93,6 +94,95 @@ namespace Donker.Pong.Common.Input
             return currentPressedKeys
                 .Where(k => !previousPressedKeys.Contains(k))
                 .ToList();
+        }
+
+        /// <summary>
+        /// Attempts to return a humanly readable description for the specified key.
+        /// </summary>
+        /// <param name="key">The key to describe.</param>
+        /// <returns>The description as a <see cref="string"/>.</returns>
+        public static string GetKeyDescription(Keys key)
+        {
+            switch (key)
+            {
+                case Keys.Back:
+                    return "Backspace";
+                case Keys.ImeConvert:
+                    return "IME Convert";
+                case Keys.ImeNoConvert:
+                    return "IME No Convert";
+                case Keys.Multiply:
+                    return "Num Pad *";
+                case Keys.Add:
+                    return "Num Pad +";
+                case Keys.Subtract:
+                    return "Num Pad -";
+                case Keys.Decimal:
+                    return "Num Pad .";
+                case Keys.Divide:
+                    return "Num Pad /";
+                case Keys.OemSemicolon:
+                    return ";";
+                case Keys.OemPlus:
+                    return "=";
+                case Keys.OemComma:
+                    return ",";
+                case Keys.OemMinus:
+                    return "-";
+                case Keys.OemPeriod:
+                    return ".";
+                case Keys.OemQuestion:
+                    return "/";
+                case Keys.OemTilde:
+                    return "`";
+                case Keys.OemOpenBrackets:
+                    return "[";
+                case Keys.OemPipe:
+                    return "\\";
+                case Keys.OemCloseBrackets:
+                    return "]";
+                case Keys.OemQuotes:
+                    return "'";
+                case Keys.OemBackslash:
+                    return "\\";
+                case Keys.Oem8:
+                    return key.ToString();
+                case Keys.OemCopy:
+                    return "Copy";
+                case Keys.OemAuto:
+                    return "Auto";
+                case Keys.OemEnlW:
+                    return "Enlarge Window";
+                case Keys.Crsel:
+                    return "CrSel";
+                case Keys.Exsel:
+                    return "ExSel";
+                case Keys.EraseEof:
+                    return "Erase EOF";
+                case Keys.Pa1:
+                    return "PA1";
+                case Keys.OemClear:
+                    return "Clear";
+            }
+
+            if (key >= Keys.D0 && key <= Keys.D9)
+                return key.ToString().Substring(1, 1);
+
+            string keyString = key.ToString();
+
+            StringBuilder descriptionBuilder = new StringBuilder();
+
+            for (int i = 0; i < keyString.Length; i++)
+            {
+                char c = keyString[i];
+
+                if (i > 0 && (char.IsUpper(c) || char.IsNumber(c)))
+                    descriptionBuilder.Append(' ');
+
+                descriptionBuilder.Append(c);
+            }
+
+            return descriptionBuilder.ToString();
         }
     }
 }

@@ -7,14 +7,11 @@ namespace Donker.Pong.Common.Helpers
     /// </summary>
     public static class RandomSingleton
     {
+        private static readonly Lazy<Random> LazyInstance = new Lazy<Random>(() => new Random());
+
         /// <summary>
         /// Gets the <see cref="Random"/> instance.
         /// </summary>
-        public static Random Instance { get { return Nested.NestedInstance; } }
-
-        private static class Nested
-        {
-            public static readonly Random NestedInstance = new Random();
-        }
+        public static Random Instance { get { return LazyInstance.Value; } }
     }
 }

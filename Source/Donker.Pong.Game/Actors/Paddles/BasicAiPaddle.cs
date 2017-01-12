@@ -33,7 +33,8 @@ namespace Donker.Pong.Game.Actors.Paddles
             if (PaddleSide == PaddleSide.Left)
             {
                 // Padle is on the left, so find the closest ball moving left
-                ball = _actorRegistry.OfType<Ball>()
+                ball = _actorRegistry.GetAll()
+                    .OfType<Ball>()
                     .Where(b => !b.IsResetting && b.Hitbox.Right > Hitbox.Left && (b.Angle.IsBetween(90, 270)))
                     .OrderBy(b => b.Hitbox.Left)
                     .FirstOrDefault();
@@ -41,7 +42,8 @@ namespace Donker.Pong.Game.Actors.Paddles
             else
             {
                 // Padle is on the right, so find the closest ball moving right
-                ball = _actorRegistry.OfType<Ball>()
+                ball = _actorRegistry.GetAll()
+                    .OfType<Ball>()
                     .Where(b => !b.IsResetting && b.Hitbox.Left < Hitbox.Right && (b.Angle.IsBetween(270, 360) || b.Angle.IsBetween(0, 90)))
                     .OrderByDescending(b => b.Hitbox.Right)
                     .FirstOrDefault();

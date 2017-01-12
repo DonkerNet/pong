@@ -12,7 +12,7 @@ namespace Donker.Pong.Game.Menu
     public class RootMenuPage : MenuPage
     {
         /// <summary>
-        /// Event triggered when the exit button has been pressed.
+        /// Event triggered when the game needs to exit.
         /// </summary>
         public event EventHandler Exit;
 

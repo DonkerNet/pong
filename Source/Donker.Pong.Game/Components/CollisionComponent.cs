@@ -43,33 +43,35 @@ namespace Donker.Pong.Game.Components
 
         public override void Update(GameTime gameTime)
         {
-            // The buffer is to make sure that a collision check between two colliders only happens once.
-            List<IActor> buffer = new List<IActor>();
+            IReadOnlyList<IActor> actors = _actorRegistry.GetAll();
+            int actorCount = actors.Count;
 
-            foreach (IActor collider in _actorRegistry)
+            for (int i = 0; i < actorCount; i++)
             {
+                IActor firstCollider = actors[i];
+
                 // Check the collision with the edge of the game grid.
                 Vector2 outOfBoundsDistance;
-                if (BoxCollisionDetection.CheckBoundsCollision(collider, _gameInfo.Bounds, out outOfBoundsDistance))
-                    collider.OnBoundsCollision(outOfBoundsDistance);
+                if (BoxCollisionDetection.CheckBoundsCollision(firstCollider, _gameInfo.Bounds, out outOfBoundsDistance))
+                    firstCollider.OnBoundsCollision(outOfBoundsDistance);
 
-                foreach (IActor bufferedCollider in buffer)
+                for (int j = 0; j < i; j++)
                 {
+                    IActor secondCollider = actors[j];
+
                     Vector2 intersection;
 
                     // Check the collision for the first collider.
-                    if (BoxCollisionDetection.CheckColliderCollision(collider, bufferedCollider, out intersection))
+                    if (BoxCollisionDetection.CheckColliderCollision(firstCollider, secondCollider, out intersection))
                     {
                         // We inform the first collider that a collision happened, allowing itself to adjust it's position or do other things.
-                        collider.OnColliderCollision(bufferedCollider, intersection);
+                        firstCollider.OnColliderCollision(secondCollider, intersection);
 
                         // By now the first collider may or may not have adjusted itself. Either way, we need the up to date intersection data for the second collider so we can supply it to it's OnColliderCollision method.
-                        BoxCollisionDetection.CheckColliderCollision(bufferedCollider, collider, out intersection);
-                        bufferedCollider.OnColliderCollision(collider, intersection);
+                        BoxCollisionDetection.CheckColliderCollision(secondCollider, firstCollider, out intersection);
+                        secondCollider.OnColliderCollision(firstCollider, intersection);
                     }
                 }
-
-                buffer.Add(collider);
             }
         }
     }

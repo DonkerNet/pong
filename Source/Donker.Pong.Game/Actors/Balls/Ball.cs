@@ -212,7 +212,7 @@ namespace Donker.Pong.Game.Actors.Balls
             if (_gameInfo.State != GameState.InProgress)
                 return;
 
-            spriteBatch.Draw(_texture, Hitbox.Location, Color.White);
+            spriteBatch.Draw(_texture, destinationRectangle: Hitbox);
         }
 
         private void UpdateMovementVector()

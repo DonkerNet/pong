@@ -22,7 +22,7 @@ namespace Donker.Pong.Game.ResourceFiles {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class StringResources {
+    public class StringResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Donker.Pong.Game.ResourceFiles.StringResources", typeof(StringResources).Assembly);
@@ -51,7 +51,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Apply.
         /// </summary>
-        internal static string Apply {
+        public static string Apply {
             get {
                 return ResourceManager.GetString("Apply", resourceCulture);
             }
@@ -72,7 +72,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Audio.
         /// </summary>
-        internal static string Audio {
+        public static string Audio {
             get {
                 return ResourceManager.GetString("Audio", resourceCulture);
             }
@@ -81,7 +81,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Auto Increase.
         /// </summary>
-        internal static string AutoIncrease {
+        public static string AutoIncrease {
             get {
                 return ResourceManager.GetString("AutoIncrease", resourceCulture);
             }
@@ -90,7 +90,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Back.
         /// </summary>
-        internal static string Back {
+        public static string Back {
             get {
                 return ResourceManager.GetString("Back", resourceCulture);
             }
@@ -99,7 +99,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Balls.
         /// </summary>
-        internal static string Balls {
+        public static string Balls {
             get {
                 return ResourceManager.GetString("Balls", resourceCulture);
             }
@@ -108,7 +108,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>
-        internal static string Cancel {
+        public static string Cancel {
             get {
                 return ResourceManager.GetString("Cancel", resourceCulture);
             }
@@ -117,7 +117,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Confirm Changes.
         /// </summary>
-        internal static string ConfirmChanges {
+        public static string ConfirmChanges {
             get {
                 return ResourceManager.GetString("ConfirmChanges", resourceCulture);
             }
@@ -126,7 +126,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Controls.
         /// </summary>
-        internal static string Controls {
+        public static string Controls {
             get {
                 return ResourceManager.GetString("Controls", resourceCulture);
             }
@@ -135,7 +135,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Disabled.
         /// </summary>
-        internal static string Disabled {
+        public static string Disabled {
             get {
                 return ResourceManager.GetString("Disabled", resourceCulture);
             }
@@ -144,7 +144,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Enabled.
         /// </summary>
-        internal static string Enabled {
+        public static string Enabled {
             get {
                 return ResourceManager.GetString("Enabled", resourceCulture);
             }
@@ -153,7 +153,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Exit.
         /// </summary>
-        internal static string Exit {
+        public static string Exit {
             get {
                 return ResourceManager.GetString("Exit", resourceCulture);
             }
@@ -162,7 +162,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Full Screen.
         /// </summary>
-        internal static string FullScreen {
+        public static string FullScreen {
             get {
                 return ResourceManager.GetString("FullScreen", resourceCulture);
             }
@@ -171,26 +171,27 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Game Speed.
         /// </summary>
-        internal static string GameSpeed {
+        public static string GameSpeed {
             get {
                 return ResourceManager.GetString("GameSpeed", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to GAME  OVER.
+        ///   Looks up a localized string similar to GAME
+        ///OVER.
         /// </summary>
-        internal static string GameStatusText_Ended {
+        public static string GameStatusText_Ended {
             get {
                 return ResourceManager.GetString("GameStatusText_Ended", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to  PAU  SED
-        /// E  =   Exit.
+        ///   Looks up a localized string similar to  PAUSED
+        /// E = Exit.
         /// </summary>
-        internal static string GameStatusText_Paused {
+        public static string GameStatusText_Paused {
             get {
                 return ResourceManager.GetString("GameStatusText_Paused", resourceCulture);
             }
@@ -199,16 +200,25 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to DonkerPONG.
         /// </summary>
-        internal static string GameTitle {
+        public static string GameTitle {
             get {
                 return ResourceManager.GetString("GameTitle", resourceCulture);
             }
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language.
+        /// </summary>
+        public static string Language {
+            get {
+                return ResourceManager.GetString("Language", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Left Paddle Down.
         /// </summary>
-        internal static string MenuText_Controls_LeftDown {
+        public static string MenuText_Controls_LeftDown {
             get {
                 return ResourceManager.GetString("MenuText_Controls_LeftDown", resourceCulture);
             }
@@ -217,7 +227,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Left Paddle Up.
         /// </summary>
-        internal static string MenuText_Controls_LeftUp {
+        public static string MenuText_Controls_LeftUp {
             get {
                 return ResourceManager.GetString("MenuText_Controls_LeftUp", resourceCulture);
             }
@@ -226,7 +236,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Right Paddle Down.
         /// </summary>
-        internal static string MenuText_Controls_RightDown {
+        public static string MenuText_Controls_RightDown {
             get {
                 return ResourceManager.GetString("MenuText_Controls_RightDown", resourceCulture);
             }
@@ -235,16 +245,16 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Right Paddle Up.
         /// </summary>
-        internal static string MenuText_Controls_RightUp {
+        public static string MenuText_Controls_RightUp {
             get {
                 return ResourceManager.GetString("MenuText_Controls_RightUp", resourceCulture);
             }
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to AI.
+        ///   Looks up a localized string similar to Computer.
         /// </summary>
-        internal static string MenuText_Paddle_BasicAiPaddle {
+        public static string MenuText_Paddle_BasicAiPaddle {
             get {
                 return ResourceManager.GetString("MenuText_Paddle_BasicAiPaddle", resourceCulture);
             }
@@ -253,7 +263,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Player.
         /// </summary>
-        internal static string MenuText_Paddle_PlayerPaddle {
+        public static string MenuText_Paddle_PlayerPaddle {
             get {
                 return ResourceManager.GetString("MenuText_Paddle_PlayerPaddle", resourceCulture);
             }
@@ -262,7 +272,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Audio Settings.
         /// </summary>
-        internal static string MenuTitle_AudioSettings {
+        public static string MenuTitle_AudioSettings {
             get {
                 return ResourceManager.GetString("MenuTitle_AudioSettings", resourceCulture);
             }
@@ -271,7 +281,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Confirmation.
         /// </summary>
-        internal static string MenuTitle_Confirmation {
+        public static string MenuTitle_Confirmation {
             get {
                 return ResourceManager.GetString("MenuTitle_Confirmation", resourceCulture);
             }
@@ -280,7 +290,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Control Settings.
         /// </summary>
-        internal static string MenuTitle_ControlSettings {
+        public static string MenuTitle_ControlSettings {
             get {
                 return ResourceManager.GetString("MenuTitle_ControlSettings", resourceCulture);
             }
@@ -289,7 +299,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to New Game.
         /// </summary>
-        internal static string MenuTitle_NewGame {
+        public static string MenuTitle_NewGame {
             get {
                 return ResourceManager.GetString("MenuTitle_NewGame", resourceCulture);
             }
@@ -298,7 +308,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string MenuTitle_Settings {
+        public static string MenuTitle_Settings {
             get {
                 return ResourceManager.GetString("MenuTitle_Settings", resourceCulture);
             }
@@ -307,7 +317,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Video Settings.
         /// </summary>
-        internal static string MenuTitle_VideoSettings {
+        public static string MenuTitle_VideoSettings {
             get {
                 return ResourceManager.GetString("MenuTitle_VideoSettings", resourceCulture);
             }
@@ -316,7 +326,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to minutes.
         /// </summary>
-        internal static string minutes {
+        public static string minutes {
             get {
                 return ResourceManager.GetString("minutes", resourceCulture);
             }
@@ -325,7 +335,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to New Game.
         /// </summary>
-        internal static string NewGame {
+        public static string NewGame {
             get {
                 return ResourceManager.GetString("NewGame", resourceCulture);
             }
@@ -334,7 +344,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
-        internal static string No {
+        public static string No {
             get {
                 return ResourceManager.GetString("No", resourceCulture);
             }
@@ -343,7 +353,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to None.
         /// </summary>
-        internal static string None {
+        public static string None {
             get {
                 return ResourceManager.GetString("None", resourceCulture);
             }
@@ -352,7 +362,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Off.
         /// </summary>
-        internal static string Off {
+        public static string Off {
             get {
                 return ResourceManager.GetString("Off", resourceCulture);
             }
@@ -361,7 +371,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to On.
         /// </summary>
-        internal static string On {
+        public static string On {
             get {
                 return ResourceManager.GetString("On", resourceCulture);
             }
@@ -370,7 +380,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Play.
         /// </summary>
-        internal static string Play {
+        public static string Play {
             get {
                 return ResourceManager.GetString("Play", resourceCulture);
             }
@@ -379,7 +389,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Players.
         /// </summary>
-        internal static string Players {
+        public static string Players {
             get {
                 return ResourceManager.GetString("Players", resourceCulture);
             }
@@ -388,7 +398,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to pts.
         /// </summary>
-        internal static string pts {
+        public static string pts {
             get {
                 return ResourceManager.GetString("pts", resourceCulture);
             }
@@ -397,7 +407,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Resolution.
         /// </summary>
-        internal static string Resolution {
+        public static string Resolution {
             get {
                 return ResourceManager.GetString("Resolution", resourceCulture);
             }
@@ -406,7 +416,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Revert Changes.
         /// </summary>
-        internal static string RevertChanges {
+        public static string RevertChanges {
             get {
                 return ResourceManager.GetString("RevertChanges", resourceCulture);
             }
@@ -415,7 +425,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Score Limit.
         /// </summary>
-        internal static string ScoreLimit {
+        public static string ScoreLimit {
             get {
                 return ResourceManager.GetString("ScoreLimit", resourceCulture);
             }
@@ -424,7 +434,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Set.
         /// </summary>
-        internal static string Set {
+        public static string Set {
             get {
                 return ResourceManager.GetString("Set", resourceCulture);
             }
@@ -433,7 +443,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Settings.
         /// </summary>
-        internal static string Settings {
+        public static string Settings {
             get {
                 return ResourceManager.GetString("Settings", resourceCulture);
             }
@@ -442,7 +452,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to SFX.
         /// </summary>
-        internal static string SFX {
+        public static string SFX {
             get {
                 return ResourceManager.GetString("SFX", resourceCulture);
             }
@@ -451,7 +461,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Time Limit.
         /// </summary>
-        internal static string TimeLimit {
+        public static string TimeLimit {
             get {
                 return ResourceManager.GetString("TimeLimit", resourceCulture);
             }
@@ -460,7 +470,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to versus.
         /// </summary>
-        internal static string versus {
+        public static string versus {
             get {
                 return ResourceManager.GetString("versus", resourceCulture);
             }
@@ -469,7 +479,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Video.
         /// </summary>
-        internal static string Video {
+        public static string Video {
             get {
                 return ResourceManager.GetString("Video", resourceCulture);
             }
@@ -478,7 +488,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Volume.
         /// </summary>
-        internal static string Volume {
+        public static string Volume {
             get {
                 return ResourceManager.GetString("Volume", resourceCulture);
             }
@@ -487,7 +497,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to VSync.
         /// </summary>
-        internal static string VSync {
+        public static string VSync {
             get {
                 return ResourceManager.GetString("VSync", resourceCulture);
             }
@@ -496,7 +506,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Windowed.
         /// </summary>
-        internal static string Windowed {
+        public static string Windowed {
             get {
                 return ResourceManager.GetString("Windowed", resourceCulture);
             }
@@ -505,7 +515,7 @@ namespace Donker.Pong.Game.ResourceFiles {
         /// <summary>
         ///   Looks up a localized string similar to Yes.
         /// </summary>
-        internal static string Yes {
+        public static string Yes {
             get {
                 return ResourceManager.GetString("Yes", resourceCulture);
             }

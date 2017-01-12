@@ -24,7 +24,7 @@ namespace Donker.Pong.Game.Actors.Paddles
         private readonly ActorRegistry _actorRegistry;
 
         // Resources
-        private Texture2D _paddleTexture;
+        private Texture2D _paddlePixel;
 
         /// <summary>
         /// Initializes the static fields of the <see cref="PaddleFactory"/> class.
@@ -51,8 +51,8 @@ namespace Donker.Pong.Game.Actors.Paddles
             _actorRegistry = services.GetService<ActorRegistry>();
 
             GraphicsDeviceManager graphics = services.GetService<GraphicsDeviceManager>();
-            _paddleTexture = new Texture2D(graphics.GraphicsDevice, (int)SettingsConstants.PaddleSize.X, (int)SettingsConstants.PaddleSize.Y);
-            _paddleTexture.FillColor(Color.White);
+            _paddlePixel = new Texture2D(graphics.GraphicsDevice, 1, 1);
+            _paddlePixel.FillColor(Color.White);
         }
 
         /// <summary>
@@ -96,7 +96,7 @@ namespace Donker.Pong.Game.Actors.Paddles
 
             return new PlayerPaddle(
                 _gameInfo,
-                _paddleTexture,
+                _paddlePixel,
                 _settingsManager,
                 _inputManager,
                 paddleSide,
@@ -111,7 +111,7 @@ namespace Donker.Pong.Game.Actors.Paddles
 
             return new BasicAiPaddle(
                 _gameInfo,
-                _paddleTexture,
+                _paddlePixel,
                 _actorRegistry,
                 paddleSide,
                 SettingsConstants.PaddleSize,
@@ -139,10 +139,10 @@ namespace Donker.Pong.Game.Actors.Paddles
 
             if (disposing)
             {
-                _paddleTexture.Dispose();
+                _paddlePixel.Dispose();
             }
 
-            _paddleTexture = null;
+            _paddlePixel = null;
         }
 
         /// <summary>

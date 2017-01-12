@@ -157,11 +157,12 @@
     <value>Game Speed</value>
   </data>
   <data name="GameStatusText_Ended" xml:space="preserve">
-    <value>GAME  OVER</value>
+    <value>GAME
+OVER</value>
   </data>
   <data name="GameStatusText_Paused" xml:space="preserve">
-    <value> PAU  SED
- E  =   Exit</value>
+    <value> PAUSED
+ E = Exit</value>
   </data>
   <data name="GameTitle" xml:space="preserve">
     <value>DonkerPONG</value>
@@ -179,7 +180,7 @@
     <value>Right Paddle Up</value>
   </data>
   <data name="MenuText_Paddle_BasicAiPaddle" xml:space="preserve">
-    <value>AI</value>
+    <value>Computer</value>
   </data>
   <data name="MenuText_Paddle_PlayerPaddle" xml:space="preserve">
     <value>Player</value>
@@ -267,5 +268,8 @@
   </data>
   <data name="SFX" xml:space="preserve">
     <value>SFX</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>Language</value>
   </data>
 </root>

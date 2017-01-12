@@ -51,7 +51,7 @@ namespace Donker.Pong.Game.Menu
                 return;
             }
 
-            _confirmItem.SelectedOption.Text = Math.Ceiling(_timeLeft.TotalSeconds).ToString("#");
+            _confirmItem.Name = string.Format("{0} ({1})", StringResources.ConfirmChanges, Math.Ceiling(_timeLeft.TotalSeconds).ToString("#"));
 
             _timeLeft -= gameTime.ElapsedGameTime;
 
