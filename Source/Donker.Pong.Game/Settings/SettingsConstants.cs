@@ -61,9 +61,9 @@ namespace Donker.Pong.Game.Settings
 
         /// <summary>
         /// <para>The interval for increasing the game speed.</para>
-        /// <para>Value = 00:00:30.000</para>
+        /// <para>Value = 00:00:15.000</para>
         /// </summary>
-        public static TimeSpan GameSpeedIncreaseInterval = TimeSpan.FromSeconds(30D);
+        public static TimeSpan GameSpeedIncreaseInterval = TimeSpan.FromSeconds(15D);
         /// <summary>
         /// The amount to add when increasing the game speed.
         /// </summary>
@@ -75,7 +75,7 @@ namespace Donker.Pong.Game.Settings
         /// <summary>
         /// The maximum speed the game may have.
         /// </summary>
-        public const float GameSpeedMaxValue = 2.0F;
+        public const float GameSpeedMaxValue = 2.5F;
 
         #endregion
 
